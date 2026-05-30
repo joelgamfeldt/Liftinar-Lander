@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liftinar – Book 20+ Pre-Sold Calls Every Month</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: #000000;
+      background: #ffffff;
+    }
+
+    /* ── Containers ─────────────────────────────── */
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .container-mid {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Divider ────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid #E5E7EB;
+      margin: 0;
+    }
+
+    /* ── Eyebrow ────────────────────────────────── */
+    .eyebrow {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #1450e8;
+      margin-bottom: 12px;
+    }
+
+    /* ── CTA Button ─────────────────────────────── */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #1450e8;
+      color: #ffffff;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      height: 64px;
+      padding: 0 48px;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-cta:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(20,80,232,0.28);
+    }
+    .btn-cta svg {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .btn-cta:hover svg {
+      transform: translateX(2px) translateY(-2px) rotate(-45deg);
+    }
+
+    /* ── HERO ────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
+      padding: 10px 0 0;
+      text-align: center;
+    }
+
+    .hero-logo {
+      margin-bottom: 8px;
+    }
+    .hero-logo img {
+      height: 70px;
+      width: auto;
+    }
+
+    /* ── TOP BANNER ─────────────────────────────── */
+    .top-banner {
+      background: #1450e8;
+      color: #ffffff;
+      text-align: center;
+      padding: 6px 24px;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 4.2vw, 46px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      max-width: 1100px;
+      margin: 0 auto 14px;
+    }
+    .hero h1 .blue { color: #1450e8; }
+
+    .hero-sub {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.7;
+      max-width: 860px;
+      margin: 0 auto 20px;
+    }
+
+    /* ── STEP LABEL ─────────────────────────────── */
+    .step-label {
+      display: block;
+      width: 100%;
+      background: #1450e8;
+      color: #ffffff;
+      text-align: center;
+      padding: 4px 32px;
+      border-radius: 6px;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+    }
+
+    /* ── VSL ─────────────────────────────────────── */
+    .vsl-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .vsl-placeholder {
+      background: #F7F7F7;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+      box-shadow: 0 24px 48px -4px rgba(0,0,0,0.2), 12px 8px 24px -4px rgba(0,0,0,0.08), -12px 8px 24px -4px rgba(0,0,0,0.08);
+    }
+    .play-icon {
+      width: 80px;
+      height: 80px;
+      background: #1450e8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .play-icon svg { width: 30px; height: 30px; fill: #fff; margin-left: 5px; }
+    .vsl-label { font-size: 14px; color: #9CA3AF; }
+
+
+    /* ── SESSION SECTION ────────────────────────── */
+    .session-section {
+      background: #ffffff;
+      padding: 64px 0;
+      text-align: center;
+    }
+    .session-section h2 {
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 64px;
+    }
+
+    .session-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+    .session-card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      transition: border-color 0.2s ease;
+    }
+    .session-card:hover {
+      border-color: #1450e8;
+    }
+    .card-img-placeholder {
+      background: #DAE2FB;
+      border-radius: 12px;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .card-img-placeholder svg {
+      width: 64px;
+      height: 64px;
+      stroke: #1450e8;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .card-num {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #1450e8;
+      margin-bottom: 8px;
+    }
+    .session-card h3 {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    /* ── FAQ ─────────────────────────────────────── */
+    .faq-section {
+      background: #ffffff;
+      padding: 96px 0;
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .faq-header h2 {
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .faq-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .faq-item {
+      background: #F7F7F7;
+      border: 1px solid #e0e0e0;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+    .faq-item.open { border-color: #1450e8; }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 20px;
+      padding: 22px 28px;
+    }
+    .faq-question span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: #DAE2FB;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .faq-chevron svg {
+      width: 14px;
+      height: 14px;
+      stroke: #1450e8;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .faq-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .faq-body-inner { overflow: hidden; }
+    .faq-answer {
+      font-size: 18px;
+      line-height: 1.65;
+      padding: 0 28px 22px;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-item.open .faq-body { grid-template-rows: 1fr; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    .site-footer {
+      background: linear-gradient(to right, #1e5af2 0%, #1450e8 40%, #1248d8 100%);
+      padding: 18px 470px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 16px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+    .footer-contact {
+      font-size: 15px;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    /* ── CALENDAR WIDGET ────────────────────────── */
+    .cal-widget {
+      font-family: Arial, system-ui, sans-serif;
+      width: 100%;
+      height: 100%;
+      background: #f0f0f0;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 3px;
+      padding: 5px;
+      flex: 1;
+      background: #f0f0f0;
+      min-height: 0;
+    }
+    .cal-cell {
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 2px;
+      box-sizing: border-box;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .cal-date-num {
+      font-size: 11px;
+      color: #70757a;
+      line-height: 1;
+    }
+    .cal-date-circle {
+      width: 22px;
+      height: 22px;
+      background: #4285F4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .cal-month-label {
+      font-size: 9px;
+      color: #70757a;
+      line-height: 1;
+    }
+    .cal-cell.webinar-day {
+      background: #E6F4EA;
+      border: 1.5px solid #2d8f47;
+    }
+    .cal-event-text {
+      font-size: 9px;
+      font-weight: 600;
+      color: #34a853;
+      white-space: nowrap;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 768px) {
+      .session-cards { grid-template-columns: 1fr; gap: 16px; }
+      .hero-sub { font-size: 18px; }
+      .btn-cta { height: 56px; padding: 0 32px; font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BANNER -->
+  <div class="top-banner">
+    For Established Online Coaches With High-Ticket Offers
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+
+      <div class="hero-logo">
+        <img src="LIFTINAR LOGO (4).png" alt="Liftinar" />
+      </div>
+
+      <h1>We'll Book You An Additional 20+ Pre-Sold Calls Every Month Through Done-For-You <span class="blue">Live Webinars</span></h1>
+
+      <p class="hero-sub">
+        We build and manage the entire webinar funnel, so all you have to do is deliver the presentation and watch the calls getting booked. And you only pay on results.
+      </p>
+
+      <!-- Step 1 + VSL -->
+      <div class="vsl-wrapper">
+        <div class="step-label">Step 1: Watch The Video</div>
+        <div class="vsl-placeholder">
+          <div>
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <p class="vsl-label">Video will be embedded here</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 label -->
+      <div class="vsl-wrapper" style="padding-top:72px;">
+        <div class="step-label" style="margin-bottom:0;">Step 2: Book Your Free Strategy Call</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALENDLY EMBED -->
+  <section id="calendly" style="background:#f9f9f9;padding:0 0 8px;">
+    <!-- Calendly inline widget begin -->
+    <div class="calendly-inline-widget" data-url="https://calendly.com/liftinar/webinar-strategy-session" style="min-width:320px;height:700px;width:100%;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <!-- Calendly inline widget end -->
+  </section>
+  <!-- STRATEGY SESSION -->
+  <section class="session-section">
+    <div style="max-width:1400px;margin:0 auto;padding:0 24px;">
+
+      <h2>What You're Gonna Get On This <span style="color:#1450e8;">Strategy Call</span></h2>
+
+      <div class="session-cards">
+
+        <div class="session-card">
+          <div class="card-img-placeholder">
+            <img src="LANDING VISUALS (4).png" alt="Full Breakdown" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />
+          </div>
+          <h3><strong>Full Breakdown</strong> of your coaching business to pinpoint your bottlenecks and see if webinars would be a good solution for you.</h3>
+        </div>
+
+        <div class="session-card">
+          <div class="card-img-placeholder">
+            <img src="2.png" alt="Personalized Plan" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />
+          </div>
+          <h3><strong>Personalized Plan</strong> of exactly what a webinar would look like for you that consistently books 20+<br>pre-sold calls every month.</h3>
+        </div>
+
+        <div class="session-card">
+          <div class="card-img-placeholder" style="padding:0;background:#f0f0f0;overflow:hidden;">
+            <div class="cal-widget">
+              <div class="cal-grid" id="calGrid"></div>
+            </div>
+          </div>
+          <h3><strong>Complete Walkthrough</strong> of how we could set everything up for you and run your first webinar within 30 days, paid on results only.</h3>
+        </div>
+
+      </div>
+
+      <a href="#calendly" class="btn-cta">
+        Book Your Free Strategy Call
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+
+      <div class="faq-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-wrapper">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How soon will I see results?</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">We'll run your first webinar within 30 days from our strategy call and then you'll start booking calls and collecting cash.</div></div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do I need to drop what I'm doing to go all in on webinars?</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">No, you can go all in on webinars, but we don't recommend it. Webinars will fill up your calendar and give you a cash injection every 4-6 weeks, but you can keep running your other funnel at the same time.</div></div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How much work will I have to do?</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">When running a webinar with us, all you have to do is promote the event with reels, record two short VSLs, each 2-4 minutes and scripted by us, and present the webinar live. We handle the rest.</div></div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How good do I need to be at presenting?</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">You have to be able to read, that's it. We will script the entire webinar for you and create the slides, so you can just read from the slides as you present. We also run a full mock run with you beforehand to make sure you're fine.</div></div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>I've tried running a webinar before and it didn't work</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">Adam Parker tried running a webinar four times on his own and didn't make a single high-ticket sale, but then, when we implemented our system, we made $19500 from one webinar. It works, when it's done correctly, and that's what you'll learn on the strategy call.</div></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p class="footer-copy">&copy; 2026 Liftinar. All rights reserved.</p>
+    <p class="footer-contact">Email: joel@liftinar.com &nbsp;|&nbsp; Instagram: @joelgamfeldt</p>
+  </footer>
+
+  <script>
+    (function() {
+      var shortMonths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      var today = new Date();
+      today.setHours(0,0,0,0);
+      var grid = document.getElementById('calGrid');
+
+      for (var i = 0; i < 28; i++) {
+        var d = new Date(today);
+        d.setDate(today.getDate() + i);
+
+        var cell = document.createElement('div');
+        cell.className = 'cal-cell';
+
+        // Month label on every cell
+        var mLabel = document.createElement('div');
+        mLabel.className = 'cal-month-label';
+        mLabel.textContent = shortMonths[d.getMonth()];
+        cell.appendChild(mLabel);
+
+        // Date number — circle for today, plain for others
+        if (i === 0) {
+          var circle = document.createElement('div');
+          circle.className = 'cal-date-circle';
+          circle.textContent = d.getDate();
+          cell.appendChild(circle);
+        } else {
+          var num = document.createElement('div');
+          num.className = 'cal-date-num';
+          num.textContent = d.getDate();
+          cell.appendChild(num);
+        }
+
+        // Webinar label on day 28
+        if (i === 27) {
+          cell.classList.add('webinar-day');
+          var bar = document.createElement('div');
+          bar.className = 'cal-event-text';
+          bar.textContent = 'Webinar';
+          cell.appendChild(bar);
+        }
+
+        grid.appendChild(cell);
+      }
+    })();
+
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
