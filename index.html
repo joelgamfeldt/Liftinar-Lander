@@ -17,7 +17,7 @@
       font-weight: 400;
       line-height: 1.65;
       color: #000000;
-      background: #ffffff;
+      background: #FAFAFA;
     }
 
     /* ── Containers ─────────────────────────────── */
@@ -28,6 +28,11 @@
     }
     .container-mid {
       max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .container-wide {
+      max-width: 1360px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -55,55 +60,52 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: #1450e8;
-      color: #ffffff;
+      background: #F8D481;
+      color: #000000;
       font-family: Inter, system-ui, sans-serif;
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 600;
       text-decoration: none;
       border: none;
       cursor: pointer;
-      height: 64px;
-      padding: 0 48px;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 67px;
+      padding: 0 50px;
+      border-radius: 999px;
+      transition: background 0.3s ease;
     }
     .btn-cta:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 40px rgba(20,80,232,0.28);
+      background: #E9A913;
     }
     .btn-cta svg {
       flex-shrink: 0;
+      transform: rotate(-45deg);
       transition: transform 0.3s ease;
     }
     .btn-cta:hover svg {
-      transform: translateX(2px) translateY(-2px) rotate(-45deg);
+      transform: translate(3px, -3px) rotate(-45deg);
     }
 
     /* ── HERO ────────────────────────────────────── */
     .hero {
-      background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
-      padding: 40px 0 0;
+      background: #FAFAFA;
+      padding: 28px 0 48px;
       text-align: center;
     }
 
     .hero-logo {
-      margin-bottom: 8px;
+      margin-bottom: 16px;
     }
     .hero-logo img {
-      height: 70px;
+      height: 52px;
       width: auto;
     }
 
-    /* ── TOP BANNER ─────────────────────────────── */
-    .top-banner {
-      background: #1450e8;
-      color: #ffffff;
-      text-align: center;
-      padding: 6px 24px;
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
+    .hero-preheader {
+      display: block;
+      font-size: 24px;
+      font-weight: 400;
+      color: #333333;
+      margin-bottom: 16px;
     }
 
     .hero h1 {
@@ -113,36 +115,23 @@
       letter-spacing: -0.5px;
       max-width: 1100px;
       margin: 0 auto 24px;
+      color: #000000;
     }
-    .hero h1 .blue { color: #1450e8; }
+    .hero .blue { color: #1450e8; }
 
     .hero-sub {
-      font-size: 22px;
-      font-weight: 400;
-      line-height: 1.7;
-      max-width: 860px;
-      margin: 0 auto 24px;
-    }
-
-    /* ── STEP LABEL ─────────────────────────────── */
-    .step-label {
-      display: block;
-      width: 100%;
-      background: #1450e8;
-      color: #ffffff;
-      text-align: center;
-      padding: 4px 32px;
-      border-radius: 6px;
       font-size: 28px;
       font-weight: 600;
-      letter-spacing: 0.02em;
-      margin-bottom: 14px;
+      line-height: 1.5;
+      max-width: 780px;
+      margin: 0 auto 24px;
+      color: #333333;
     }
 
     /* ── VSL ─────────────────────────────────────── */
     .vsl-wrapper {
-      max-width: 860px;
-      margin: 24px auto 0;
+      max-width: 780px;
+      margin: 16px auto 0;
     }
     .vsl-placeholder {
       background: #F7F7F7;
@@ -152,7 +141,6 @@
       align-items: center;
       justify-content: center;
       aspect-ratio: 16/9;
-      box-shadow: 0 24px 48px -4px rgba(0,0,0,0.2), 12px 8px 24px -4px rgba(0,0,0,0.08), -12px 8px 24px -4px rgba(0,0,0,0.08);
     }
     .play-icon {
       width: 80px;
@@ -167,72 +155,239 @@
     .play-icon svg { width: 30px; height: 30px; fill: #fff; margin-left: 5px; }
     .vsl-label { font-size: 14px; color: #9CA3AF; }
 
-
-    /* ── SESSION SECTION ────────────────────────── */
-    .session-section {
+    /* ── PROBLEM / SOLUTION ─────────────────────── */
+    .ps-section {
       background: #ffffff;
-      padding: 64px 0;
+      padding: 96px 0;
+    }
+    .ps-header {
       text-align: center;
-    }
-    .session-section h2 {
-      font-size: clamp(24px, 3.5vw, 38px);
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 64px;
-    }
-
-    .session-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
       margin-bottom: 56px;
     }
-    .session-card {
-      background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 16px;
-      padding: 16px;
+    .ps-header h2 {
+      font-size: clamp(24px, 2.8vw, 34px);
+      font-weight: 600;
+      line-height: 1.25;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #000000;
+    }
+    .ps-header .blue { color: #1450e8; }
+    .ps-grid {
+      display: grid;
+      grid-template-columns: 1fr 72px 1fr;
+      align-items: stretch;
+      gap: 20px 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .ps-col-label {
       text-align: center;
-      transition: border-color 0.2s ease;
+      font-size: 18px;
+      font-weight: 600;
+      padding-bottom: 8px;
     }
-    .session-card:hover {
-      border-color: #1450e8;
+    .ps-col-label.problem { color: #6B7280; }
+    .ps-col-label.solution { color: #1450e8; }
+    .ps-divider {
+      grid-column: 1 / -1;
+      border: none;
+      border-top: 1px solid #E5E7EB;
+      margin: 4px 0;
     }
-    .card-img-placeholder {
-      background: #DAE2FB;
-      border-radius: 12px;
-      aspect-ratio: 16/9;
+    .ps-arrow {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 12px;
     }
-    .card-img-placeholder svg {
-      width: 64px;
-      height: 64px;
-      stroke: #1450e8;
+    .ps-arrow svg {
+      width: 28px;
+      height: 28px;
+      stroke: #9CA3AF;
       fill: none;
-      stroke-width: 1.5;
+      stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .card-num {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #1450e8;
-      margin-bottom: 8px;
+    .ps-box {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 24px;
+      border-radius: 16px;
+      height: 100%;
     }
-    .session-card h3 {
+    .ps-box.problem {
+      background: #F5F5F5;
+      border: 1px solid #9CA3AF;
+    }
+    .ps-box.solution {
+      background: #EAF0FE;
+      border: 1px solid #1450e8;
+    }
+    .ps-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ps-box.problem .ps-icon { background: #E5E7EB; }
+    .ps-box.problem .ps-icon svg { stroke: #6B7280; }
+    .ps-box.solution .ps-icon { background: #DCE6FB; }
+    .ps-box.solution .ps-icon svg { stroke: #1450e8; }
+    .ps-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: #1450e8;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .ps-box h3 {
+      font-size: 21px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .ps-box.problem h3 { color: #111111; }
+    .ps-box.solution h3 { color: #111111; }
+    .ps-box p {
+      font-size: 15px;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .ps-box.problem p { color: #1F2937; }
+    .ps-box.solution p { color: #1F2937; }
+    .ps-final-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #000000;
+      padding-top: 24px;
+    }
+    .ps-final-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 24px;
+    }
+
+    /* ── STEPS / PROCESS ─────────────────────────── */
+    .steps-section {
+      background: #EEF4FF;
+      padding: 96px 0;
+    }
+    .steps-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .steps-header h2 {
+      font-size: clamp(24px, 2.8vw, 34px);
+      font-weight: 600;
+      line-height: 1.25;
+      max-width: 1100px;
+      margin: 0 auto;
+      color: #000000;
+    }
+    .steps-header .blue { color: #1450e8; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .step-box {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .step-label {
+      font-weight: 700;
+      color: #1450e8;
+    }
+    .step-box h3 {
+      font-size: 23px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      color: #000000;
+    }
+    .step-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #000000;
+      margin: 0;
+    }
+
+    /* ── PROOF ──────────────────────────────────── */
+    .proof-section {
+      background: #ffffff;
+      padding: 96px 0;
+    }
+    .proof-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .proof-header h2 {
+      font-size: clamp(24px, 2.8vw, 34px);
+      font-weight: 600;
+      line-height: 1.25;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #000000;
+    }
+    .proof-header .blue { color: #1450e8; }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .proof-mini-headline {
       font-size: 24px;
-      font-weight: 400;
-      line-height: 1.4;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      color: #000000;
+    }
+    .proof-mini-headline .blue { color: #1450e8; }
+    .proof-copy p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #1F2937;
+      margin-bottom: 24px;
+    }
+    .proof-video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000000;
+    }
+    .proof-video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     /* ── FAQ ─────────────────────────────────────── */
     .faq-section {
-      background: #ffffff;
+      background: #EEF4FF;
       padding: 96px 0;
     }
     .faq-header {
@@ -240,7 +395,7 @@
       margin-bottom: 64px;
     }
     .faq-header h2 {
-      font-size: clamp(24px, 3vw, 38px);
+      font-size: clamp(22px, 2.6vw, 32px);
       font-weight: 600;
       line-height: 1.2;
     }
@@ -250,7 +405,7 @@
       gap: 10px;
     }
     .faq-item {
-      background: #F7F7F7;
+      background: #ffffff;
       border: 1px solid #e0e0e0;
       border-radius: 14px;
       overflow: hidden;
@@ -303,6 +458,148 @@
     .faq-item.open .faq-chevron { transform: rotate(180deg); }
     .faq-item.open .faq-body { grid-template-rows: 1fr; }
 
+    /* ── OFFER ──────────────────────────────────── */
+    .offer-section {
+      background: #FAFAFA;
+      padding: 96px 0;
+    }
+    .offer-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .offer-header h2 {
+      font-size: clamp(24px, 2.8vw, 34px);
+      font-weight: 600;
+      line-height: 1.25;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #000000;
+    }
+    .offer-columns {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      grid-template-rows: auto auto auto;
+      column-gap: 48px;
+      row-gap: 0;
+      max-width: 1100px;
+      margin: 0 auto 56px;
+    }
+    .offer-cols-hr {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      border: none;
+      border-top: 1px solid #E5E7EB;
+      margin: 16px 0 24px;
+    }
+    .offer-col-divider {
+      grid-column: 2;
+      grid-row: 1 / 4;
+      width: 1px;
+      background: #E5E7EB;
+    }
+    .offer-col-head {
+      font-size: 22px;
+      font-weight: 600;
+      color: #000000;
+    }
+    .offer-col-head-left { grid-column: 1; grid-row: 1; }
+    .offer-col-head-right { grid-column: 3; grid-row: 1; }
+    .offer-col-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .offer-col-list-left { grid-column: 1; grid-row: 3; }
+    .offer-col-list-right { grid-column: 3; grid-row: 3; }
+    .offer-col-list li {
+      font-size: 17px;
+      line-height: 1.55;
+      color: #1F2937;
+      padding-left: 26px;
+      position: relative;
+    }
+    .offer-col-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #1450e8;
+    }
+    .offer-payment-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #1450e8;
+      border: 1px solid #0f3aad;
+      border-radius: 16px;
+      padding: 28px 32px;
+      max-width: 800px;
+      margin: 0 auto 32px;
+    }
+    .offer-payment-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .offer-payment-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .offer-payment-box p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #ffffff;
+      margin: 0;
+    }
+    .offer-book-box {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 20px;
+      padding: 48px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .offer-book-box h3 {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      color: #000000;
+    }
+    .offer-book-box > p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #1F2937;
+      margin-bottom: 24px;
+    }
+    .offer-book-box ol {
+      text-align: left;
+      max-width: 520px;
+      margin: 0 auto 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 17px;
+      line-height: 1.5;
+      color: #1F2937;
+      padding-left: 22px;
+    }
+
     /* ── FOOTER ─────────────────────────────────── */
     .site-footer {
       background: linear-gradient(to right, #1e5af2 0%, #1450e8 40%, #1248d8 100%);
@@ -324,102 +621,54 @@
       color: #ffffff;
     }
 
-    /* ── CALENDAR WIDGET ────────────────────────── */
-    .cal-widget {
-      font-family: Arial, system-ui, sans-serif;
-      width: 100%;
-      height: 100%;
-      background: #f0f0f0;
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .cal-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      gap: 3px;
-      padding: 5px;
-      flex: 1;
-      background: #f0f0f0;
-      min-height: 0;
-    }
-    .cal-cell {
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2px;
-      padding: 2px;
-      box-sizing: border-box;
-      min-height: 0;
-      overflow: hidden;
-    }
-    .cal-date-num {
-      font-size: 11px;
-      color: #70757a;
-      line-height: 1;
-    }
-    .cal-date-circle {
-      width: 22px;
-      height: 22px;
-      background: #4285F4;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    .cal-month-label {
-      font-size: 9px;
-      color: #70757a;
-      line-height: 1;
-    }
-    .cal-cell.webinar-day {
-      background: #E6F4EA;
-      border: 1.5px solid #2d8f47;
-    }
-    .cal-event-text {
-      font-size: 9px;
-      font-weight: 600;
-      color: #34a853;
-      white-space: nowrap;
-    }
-
     /* ── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 768px) {
-      .session-cards { grid-template-columns: 1fr; gap: 16px; }
-      .hero-sub { font-size: 18px; }
+      .hero-sub { font-size: 20px; }
       .btn-cta { height: 56px; padding: 0 32px; font-size: 17px; }
+      .ps-grid { grid-template-columns: 1fr; }
+      .ps-arrow svg { transform: rotate(90deg); }
+      .ps-col-label { display: none; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; gap: 32px; }
+      .offer-columns { grid-template-columns: 1fr; row-gap: 0; }
+      .offer-col-divider { display: none; }
+      .offer-cols-hr { display: none; }
+      .offer-col-head-left, .offer-col-head-right {
+        grid-column: 1;
+        grid-row: auto;
+        border-bottom: 1px solid #E5E7EB;
+        padding-bottom: 16px;
+        margin-bottom: 20px;
+      }
+      .offer-col-list-left, .offer-col-list-right { grid-column: 1; grid-row: auto; }
+      .offer-col-head-left { order: 1; }
+      .offer-col-list-left { order: 2; margin-bottom: 32px; }
+      .offer-col-head-right { order: 3; }
+      .offer-col-list-right { order: 4; }
+      .offer-book-box { padding: 32px 24px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BANNER -->
-  <div class="top-banner">
-    For High-Ticket Courses And Coaching Programs
-  </div>
-
   <!-- HERO -->
   <section class="hero">
     <div class="container">
 
-      <h1>We'll Fill Your Calendar With Pre-Sold Calls<br>Every Single Month Through Done-For-You<br><span class="blue">Live Webinars</span></h1>
+      <div class="hero-logo">
+        <img src="liftinar-logo.svg" alt="Liftinar" />
+      </div>
+
+      <span class="hero-preheader">For high-ticket online coaches</span>
+
+      <h1>How We'll <span class="blue">Fill Your Calendar</span> With Pre-Sold Calls Every Month Through Done-For-You <span class="blue">Live Webinars</span></h1>
 
       <p class="hero-sub">
-        You don't pay us a penny until it makes you money.
+        You don't pay us a penny until it makes you money
       </p>
 
-      <!-- Step 1 + VSL -->
+      <!-- VSL -->
       <div class="vsl-wrapper">
-        <div class="step-label">Step 1: Watch The Video</div>
         <div class="vsl-placeholder">
           <div>
             <div class="play-icon">
@@ -428,62 +677,262 @@
             <p class="vsl-label">Video will be embedded here</p>
           </div>
         </div>
-      </div>
 
-      <!-- Step 2 label -->
-      <div class="vsl-wrapper" style="padding-top:72px;">
-        <div class="step-label" style="margin-bottom:0;">Step 2: Book Your Free Strategy Call</div>
+        <a href="https://calendly.com/liftinar/webinar-strategy-session" target="_blank" rel="noopener" class="btn-cta" style="margin-top:24px;">
+          Book Your Free Strategy Call
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </div>
 
     </div>
   </section>
+  <hr class="divider" />
 
-  <!-- CALENDLY EMBED -->
-  <section id="calendly" style="background:#f9f9f9;padding:0 0 8px;">
-    <!-- Calendly inline widget begin -->
-    <div class="calendly-inline-widget" data-url="https://calendly.com/liftinar/webinar-strategy-session" style="min-width:320px;height:700px;width:100%;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- Calendly inline widget end -->
-  </section>
-  <!-- STRATEGY SESSION -->
-  <section class="session-section">
-    <div style="max-width:1400px;margin:0 auto;padding:0 24px;">
+  <!-- PROBLEM / SOLUTION -->
+  <section class="ps-section">
+    <div class="container-mid">
 
-      <h2>What You're Gonna Get On This <span style="color:#1450e8;">Strategy Call</span></h2>
+      <div class="ps-header">
+        <h2>Having Trouble Scaling Your Business To The Next Level? <span class="blue">Here's How Webinars Fix That</span></h2>
+      </div>
 
-      <div class="session-cards">
+      <div class="ps-grid">
 
-        <div class="session-card">
-          <div class="card-img-placeholder">
-            <img src="LANDING VISUALS (4).png" alt="Full Breakdown" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />
+        <div class="ps-col-label problem">The Problem</div>
+        <div></div>
+        <div class="ps-col-label solution">The Solution</div>
+
+        <div class="ps-box problem">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <h3><strong>Full Breakdown</strong> of your coaching business to pinpoint your bottlenecks and see if webinars would be a good solution for you.</h3>
+          <div>
+            <h3>You can't fill your calendar consistently</h3>
+            <p>No matter how much content you post, how many DMs you send, or how many setters you hire, the calls coming in are never consistent enough to hit your revenue goals.</p>
+          </div>
+        </div>
+        <div class="ps-arrow">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="ps-box solution">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+          </div>
+          <div>
+            <h3>Book more calls with less time</h3>
+            <p>One webinar gets hundreds of your existing audience in one room. One 90-minute presentation does the work of weeks of DMs, content, and setter outreach combined.</p>
+          </div>
         </div>
 
-        <div class="session-card">
-          <div class="card-img-placeholder">
-            <img src="2.png" alt="Personalized Plan" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />
+        <hr class="ps-divider" />
+
+        <div class="ps-box problem">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
           </div>
-          <h3><strong>Personalized Plan</strong> of exactly what a webinar would look like for you that consistently books 20+<br>pre-sold calls every month.</h3>
+          <div>
+            <h3>The calls you book aren't closing</h3>
+            <p>Leads show up cold, undecided, and leave with an "I need to think about it" that never converts. That's revenue sitting on the table every single month.</p>
+          </div>
+        </div>
+        <div class="ps-arrow">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="ps-box solution">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <h3>Every call is pre-sold before it starts</h3>
+            <p>90 minutes of live teaching and objection handling means by the time someone books a call, they've already decided. It's not a discovery call. It's a close.</p>
+          </div>
         </div>
 
-        <div class="session-card">
-          <div class="card-img-placeholder" style="padding:0;background:#f0f0f0;overflow:hidden;">
-            <div class="cal-widget">
-              <div class="cal-grid" id="calGrid"></div>
-            </div>
+        <hr class="ps-divider" />
+
+        <div class="ps-box problem">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
-          <h3><strong>Complete Walkthrough</strong> of how we could set everything up for you and run your first webinar within 30 days, paid on results only.</h3>
+          <div>
+            <h3>Your monthly revenue is unpredictable</h3>
+            <p>One month you're hitting record numbers. The next is dead. Your revenue is tied to content performance and referrals, not a system you control.</p>
+          </div>
+        </div>
+        <div class="ps-arrow">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="ps-box solution">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <div>
+            <h3>Run revenue events on demand</h3>
+            <p>Run a live webinar every 4 to 6 weeks and you always know when the next batch of pre-sold calls is coming. No more riding the content rollercoaster.</p>
+          </div>
+        </div>
+
+        <hr class="ps-divider" />
+
+        <div class="ps-box problem">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          </div>
+          <div>
+            <h3>Most of your leads never convert</h3>
+            <p>People in your audience are interested but never took the final step. They didn't reply to the DM, didn't book from the VSL, and slowly went cold.</p>
+          </div>
+        </div>
+        <div class="ps-arrow">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="ps-box solution">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/></svg>
+          </div>
+          <div>
+            <h3>New way to convert the unconverted</h3>
+            <p>Free webinars are an easy yes for someone who wasn't ready before. Once they're in the room, you have 90 minutes to shift their beliefs and pitch with a fresh angle.</p>
+          </div>
+        </div>
+
+        <div class="ps-final-text">"I want to run a webinar, but I have no idea where to start"</div>
+        <div class="ps-arrow">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="ps-final-cta">
+          <a href="https://calendly.com/liftinar/webinar-strategy-session" target="_blank" rel="noopener" class="btn-cta">
+            Book Your Free Strategy Call
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
         </div>
 
       </div>
 
-      <a href="#calendly" class="btn-cta">
-        Book Your Free Strategy Call
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-        </svg>
-      </a>
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- STEPS / PROCESS -->
+  <section class="steps-section">
+    <div class="container-wide">
+
+      <div class="steps-header">
+        <h2>How We'll Run Your First Or Next Webinar In <span class="blue">30 Days</span></h2>
+      </div>
+
+      <div class="steps-grid">
+
+        <div class="step-box">
+          <h3><span class="step-label">Step 1:</span> We get your ideal buyers to sign up</h3>
+          <p>We build the entire funnel, from the registration page to writing the VSL script. Then we drive traffic to it from social media and your email list. This way you can fill the room from your already existing followers.</p>
+        </div>
+
+        <div class="step-box">
+          <h3><span class="step-label">Step 2:</span> We make sure that the registrants show up</h3>
+          <p>Most people who register for webinars forget and ghost. We stack email, SMS, and WhatsApp reminders on top of a confirmation page that pre-sells the event, so registrants show up warm and ready instead of half-checked-out.</p>
+        </div>
+
+        <div class="step-box">
+          <h3><span class="step-label">Step 3:</span> We convert viewers into booked calls</h3>
+          <p>We write the script, create the presentation, and manage the live room for you. Your only job is to read the text on the slides as you present. By the end of the 90 minutes, people who are ready to buy book calls.</p>
+        </div>
+
+        <div class="step-box">
+          <h3><span class="step-label">Step 4:</span> We maximize revenue after the webinar</h3>
+          <p>Not everyone buys live. We launch a replay funnel within 24 hours and send targeted follow-up emails based on exactly what each lead did during the event, so the revenue doesn't stop when the webinar ends.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- OFFER -->
+  <section class="offer-section">
+    <div class="container-mid">
+
+      <div class="offer-header">
+        <h2>Here's Exactly What It Looks Like To Work With Us</h2>
+      </div>
+
+      <div class="offer-columns">
+
+        <h3 class="offer-col-head offer-col-head-left">What we do</h3>
+        <div class="offer-col-divider"></div>
+        <h3 class="offer-col-head offer-col-head-right">What you do</h3>
+
+        <hr class="offer-cols-hr" />
+
+        <ul class="offer-col-list offer-col-list-left">
+          <li><strong>Custom offer, angle, and bonus stack,</strong> engineered so the right people register and buy.</li>
+          <li><strong>Registration and confirmation pages + word-for-word VSL scripts,</strong> record in 15 minutes, done.</li>
+          <li><strong>9 promotional emails in your voice,</strong> every angle covered so your webinar stands out.</li>
+          <li><strong>Instagram story sequences and reel content plan,</strong> daily registrations with one tap per day.</li>
+          <li><strong>Comment-to-registration automation and 2-step bonus strategy,</strong> lead capture on autopilot.</li>
+          <li><strong>Reminder system across email, WhatsApp, and SMS,</strong> turns registrants into can't-miss attendees.</li>
+          <li><strong>Webinar slides, script, and full live rehearsal,</strong> present without memorizing a word.</li>
+          <li><strong>Live room moderation and qualification-gated bookings,</strong> we run the room, you get calls worth taking.</li>
+          <li><strong>24-hour replay funnel and WhatsApp follow-up sequence,</strong> captures no-shows while intent peaks.</li>
+          <li><strong>Live dashboard, lead routing, behavior-based follow-up, and 24/7 team access,</strong> real-time visibility, hottest leads first, no bottlenecks.</li>
+        </ul>
+
+        <ul class="offer-col-list offer-col-list-right">
+          <li>Promote the event with short-form content, <strong>following our provided content plan.</strong></li>
+          <li>Record 2 mini VSLs (about 2-5 min each), <strong>scripted and edited by us.</strong></li>
+          <li>Show up live and present the webinar, <strong>just reading the script we wrote.</strong></li>
+        </ul>
+
+      </div>
+
+      <div class="offer-payment-box">
+        <div class="offer-payment-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.25 3.5 9.74 8 11 4.5-1.26 8-5.75 8-11V5l-8-3z"/></svg>
+        </div>
+        <p>We work 100% on a performance basis, meaning we only get paid when we produce a result. That's why we're as invested in your success as you are.</p>
+      </div>
+
+      <div class="offer-book-box">
+        <h3>Ready to run your first or next webinar?</h3>
+        <p>Book a free strategy call. We'll pinpoint what's holding you back, show you if a webinar fits, and walk you through how we'd run it.</p>
+        <a href="https://calendly.com/liftinar/webinar-strategy-session" target="_blank" rel="noopener" class="btn-cta">
+          Book Your Free Strategy Call
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- PROOF -->
+  <section class="proof-section">
+    <div class="container-mid">
+
+      <div class="proof-header">
+        <h2>Proof This <span class="blue">Process Works</span></h2>
+      </div>
+
+      <div class="proof-grid">
+
+        <div class="proof-copy">
+          <h3 class="proof-mini-headline">How This Process Made Adam Parker <span class="blue">$19500 From One Webinar</span></h3>
+          <p>Adam had tried running a webinar on his own 4 times, but it didn't result in a single high-ticket sale.</p>
+          <p>Then we came in on the 5th webinar and helped generate $19500 in revenue from just 160 registrants, with just $346 in ad-spend supplemented with organic.</p>
+        </div>
+
+        <div class="proof-video-wrapper">
+          <iframe src="https://www.youtube.com/embed/cKKJyBueoCE?start=63" title="Adam Parker Case Study" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+      </div>
 
     </div>
   </section>
@@ -494,7 +943,6 @@
     <div class="container">
 
       <div class="faq-header">
-        <span class="eyebrow">Common Questions</span>
         <h2>Frequently Asked Questions</h2>
       </div>
 
@@ -552,51 +1000,6 @@
   </footer>
 
   <script>
-    (function() {
-      var shortMonths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      var today = new Date();
-      today.setHours(0,0,0,0);
-      var grid = document.getElementById('calGrid');
-
-      for (var i = 0; i < 28; i++) {
-        var d = new Date(today);
-        d.setDate(today.getDate() + i);
-
-        var cell = document.createElement('div');
-        cell.className = 'cal-cell';
-
-        // Month label on every cell
-        var mLabel = document.createElement('div');
-        mLabel.className = 'cal-month-label';
-        mLabel.textContent = shortMonths[d.getMonth()];
-        cell.appendChild(mLabel);
-
-        // Date number — circle for today, plain for others
-        if (i === 0) {
-          var circle = document.createElement('div');
-          circle.className = 'cal-date-circle';
-          circle.textContent = d.getDate();
-          cell.appendChild(circle);
-        } else {
-          var num = document.createElement('div');
-          num.className = 'cal-date-num';
-          num.textContent = d.getDate();
-          cell.appendChild(num);
-        }
-
-        // Webinar label on day 28
-        if (i === 27) {
-          cell.classList.add('webinar-day');
-          var bar = document.createElement('div');
-          bar.className = 'cal-event-text';
-          bar.textContent = 'Webinar';
-          cell.appendChild(bar);
-        }
-
-        grid.appendChild(cell);
-      }
-    })();
-
     document.querySelectorAll('.faq-question').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var item = btn.closest('.faq-item');
