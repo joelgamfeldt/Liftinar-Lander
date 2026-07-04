@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Call Has Been Scheduled – Liftinar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: #000000;
+      background: #FAFAFA;
+    }
+
+    /* ── Containers ─────────────────────────────── */
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .container-mid {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .container-wide {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Divider ────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid #E5E7EB;
+      margin: 0;
+    }
+
+    /* ── Eyebrow ────────────────────────────────── */
+    .eyebrow {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #1450e8;
+      margin-bottom: 12px;
+    }
+
+    /* ── HERO ────────────────────────────────────── */
+    .hero {
+      background: #FAFAFA;
+      padding: 28px 0 48px;
+      text-align: center;
+    }
+
+    .hero-logo {
+      margin-bottom: 16px;
+    }
+    .hero-logo img {
+      height: 52px;
+      width: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 4.2vw, 46px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      max-width: 900px;
+      margin: 0 auto 24px;
+      color: #000000;
+    }
+    .hero .blue { color: #1450e8; }
+
+    .hero-sub {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 780px;
+      margin: 0 auto 24px;
+      color: #333333;
+    }
+
+    /* ── Section header (shared pattern) ─────────── */
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-header h2 {
+      font-size: clamp(24px, 2.8vw, 34px);
+      font-weight: 600;
+      line-height: 1.25;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #000000;
+    }
+    .section-header .blue { color: #1450e8; }
+    .section-header.tight { margin-bottom: 40px; }
+    .section-header h2 .step-num { color: #1450e8; }
+
+    /* ── VSL ─────────────────────────────────────── */
+    .vsl-wrapper {
+      max-width: 780px;
+      margin: 16px auto 0;
+    }
+    .vsl-wrapper.wide { max-width: 860px; }
+    .vsl-placeholder {
+      background: #F7F7F7;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+    }
+    .play-icon {
+      width: 80px;
+      height: 80px;
+      background: #1450e8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .play-icon svg { width: 30px; height: 30px; fill: #fff; margin-left: 5px; }
+    .vsl-label { font-size: 14px; color: #9CA3AF; }
+
+    /* ── SMALL VIDEO GRID (Q&A) ──────────────────── */
+    .qa-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 48px;
+      max-width: 1280px;
+      margin: 40px auto 0;
+    }
+    .qa-card {
+      text-align: center;
+    }
+    .vsl-placeholder-sm {
+      background: #F7F7F7;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+    }
+    .play-icon-sm {
+      width: 44px;
+      height: 44px;
+      background: #1450e8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .play-icon-sm svg { width: 16px; height: 16px; fill: #fff; margin-left: 2px; }
+
+    /* ── CALENDAR STEP ───────────────────────────── */
+    .cal-section {
+      background: #ffffff;
+      padding: 96px 0;
+    }
+    .cal-copy {
+      max-width: 780px;
+      margin: 0 auto 32px;
+      font-size: 24px;
+      line-height: 1.6;
+      color: #1F2937;
+      text-align: left;
+    }
+    .cal-copy span {
+      display: block;
+    }
+    .cal-copy span + span {
+      margin-top: 12px;
+    }
+    .cal-image-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #F7F7F7;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .cal-image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .cal-copy-under {
+      max-width: 780px;
+      margin: 32px auto 0;
+      font-size: 24px;
+      line-height: 1.6;
+      color: #1F2937;
+      text-align: left;
+    }
+
+    /* ── STEP SECTIONS (alternating backgrounds) ── */
+    .step-section {
+      padding: 96px 0;
+    }
+    .step-section.alt {
+      background: #FAFAFA;
+    }
+    .step-section.plain {
+      background: #ffffff;
+    }
+
+    /* ── CASE STUDY / PROOF ──────────────────────── */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .proof-copy h3 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      color: #000000;
+    }
+    .proof-copy h3 .blue { color: #1450e8; }
+    .proof-copy p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #1F2937;
+      margin-bottom: 16px;
+    }
+    .proof-copy p:last-child { margin-bottom: 0; }
+    .proof-video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000000;
+    }
+    .proof-video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    .site-footer {
+      background: linear-gradient(to right, #1e5af2 0%, #1450e8 40%, #1248d8 100%);
+      padding: 18px 0;
+    }
+    .footer-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 16px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+    .footer-contact {
+      font-size: 15px;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 900px) {
+      .proof-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .hero-sub { font-size: 18px; }
+      .footer-inner { flex-direction: column; justify-content: center; text-align: center; }
+    }
+    @media (max-width: 640px) {
+      .qa-grid { grid-template-columns: 1fr; }
+      .cal-copy, .cal-copy-under { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+
+      <div class="hero-logo">
+        <img src="LIFTINAR LOGO (1).svg" alt="Liftinar" />
+      </div>
+
+      <h1>Your Call Has Been <span class="blue">Scheduled</span> ✅</h1>
+
+      <p class="hero-sub">
+        Please follow the next steps below to save us both time and make sure we get the most out of our call.
+      </p>
+
+      <!-- Step 1: VSL -->
+      <div class="section-header tight">
+        <h2><span class="step-num">STEP #1:</span> Watch The Short Video</h2>
+      </div>
+      <div class="vsl-wrapper">
+        <div class="vsl-placeholder">
+          <div>
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <p class="vsl-label">Video will be embedded here</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- STEP 2: CALENDAR -->
+  <section class="cal-section">
+    <div class="container-mid">
+
+      <div class="section-header">
+        <h2><span class="step-num">STEP #2:</span> Confirm The Call On Your Calendar</h2>
+      </div>
+
+      <p class="cal-copy">
+        <span>You'll receive a calendar invite on your email (be sure to check spam).</span>
+        <span>Click on the event, select <strong>"YES"</strong> so that it's also confirmed in your calendar, as you can see below.</span>
+      </p>
+
+      <div class="cal-image-wrapper">
+        <img src="Calendar add instruction (1).png" alt="Calendar confirmation instructions" />
+      </div>
+
+      <p class="cal-copy-under">
+        🔗 Your email will include a clickable Zoom or Google Meet link. Keep that email saved so you can access the call at the right time.
+      </p>
+
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- STEP 3: Q&A -->
+  <section class="step-section alt">
+    <div class="container-wide">
+
+      <div class="section-header">
+        <h2><span class="step-num">STEP #3:</span> Most Common Questions</h2>
+      </div>
+
+      <div class="vsl-wrapper wide">
+        <p class="vsl-label" style="text-align:center; font-size:16px; font-weight:600; color:#000000; margin-bottom:14px;">Headline for the main Q&amp;A video goes here</p>
+        <div class="vsl-placeholder">
+          <div>
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <p class="vsl-label">Video will be embedded here</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-grid">
+        <div class="qa-card">
+          <div class="vsl-placeholder-sm">
+            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+        </div>
+        <div class="qa-card">
+          <div class="vsl-placeholder-sm">
+            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+        </div>
+        <div class="qa-card">
+          <div class="vsl-placeholder-sm">
+            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+        </div>
+        <div class="qa-card">
+          <div class="vsl-placeholder-sm">
+            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+        </div>
+        <div class="qa-card">
+          <div class="vsl-placeholder-sm">
+            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+        </div>
+        <div class="qa-card">
+          <div class="vsl-placeholder-sm">
+            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+        </div>
+        <div class="qa-card">
+          <div class="vsl-placeholder-sm">
+            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+        </div>
+        <div class="qa-card">
+          <div class="vsl-placeholder-sm">
+            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- STEP 4: CASE STUDY -->
+  <section class="step-section plain">
+    <div class="container-mid">
+
+      <div class="section-header">
+        <h2><span class="step-num">STEP #4:</span> See Real Results</h2>
+      </div>
+
+      <div class="proof-grid">
+
+        <div class="proof-copy">
+          <h3>How This Process Made Adam Parker <span class="blue">$19500 From One Webinar</span></h3>
+          <p>Adam had tried running a webinar on his own 4 times, but it didn't result in a single high-ticket sale.</p>
+          <p>Then we came in on the 5th webinar and helped book 25 calls from 160 registrants, generating $19500 in revenue.</p>
+        </div>
+
+        <div class="proof-video-wrapper">
+          <iframe src="https://www.youtube.com/embed/cKKJyBueoCE?start=63" title="Adam Parker Case Study" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Liftinar. All rights reserved.</p>
+      <p class="footer-contact">Email: joel@liftinar.com &nbsp;|&nbsp; Instagram: @joelgamfeldt</p>
+    </div>
+  </footer>
+
+</body>
+</html>
