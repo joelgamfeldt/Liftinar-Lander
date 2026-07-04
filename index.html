@@ -473,18 +473,19 @@
       max-width: 1100px;
       margin: 0 auto 64px;
     }
-    .work-head-delivery { grid-column: 1; grid-row: 1; }
-    .work-head-implementation { grid-column: 5; grid-row: 1; }
-    .work-head-results { grid-column: 3; grid-row: 1; }
-    .work-body-delivery { grid-column: 1; grid-row: 3; }
-    .work-body-implementation { grid-column: 5; grid-row: 3; }
-    .work-body-results { grid-column: 3; grid-row: 3; }
+    .work-head-delivery { grid-column: 1; grid-row: 1; padding-top: 8px; padding-bottom: 24px; }
+    .work-head-implementation { grid-column: 5; grid-row: 1; padding-top: 8px; padding-bottom: 24px; }
+    .work-head-results { grid-column: 3; grid-row: 1 / 3; }
+    .work-body-delivery { grid-column: 1; grid-row: 3; padding-top: 24px; }
+    .work-body-implementation { grid-column: 5; grid-row: 3; padding-top: 24px; }
+    .work-body-results { grid-column: 3; grid-row: 2 / 4; }
     .work-divider-h {
       grid-column: 1 / -1;
       grid-row: 2;
       border: none;
       border-top: 1px solid #E5E7EB;
-      margin: 24px 0;
+      margin: 0;
+      height: 0;
     }
     .work-divider-v {
       grid-row: 1 / 4;
@@ -501,7 +502,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
     .work-icon svg {
       width: 26px;
@@ -515,6 +516,7 @@
     .work-head-delivery h3, .work-head-implementation h3, .work-head-results h3 {
       font-size: 22px;
       font-weight: 600;
+      margin-top: 2px;
     }
     .work-head-delivery h3, .work-head-implementation h3 { color: #000000; }
     .work-head-results h3 { color: #ffffff; }
@@ -523,6 +525,9 @@
       line-height: 1.6;
       color: #1F2937;
       margin-bottom: 14px;
+    }
+    .work-body-results p {
+      color: #000000;
     }
     .work-body-delivery p:last-child, .work-body-implementation p:last-child, .work-body-results p:last-child {
       margin-bottom: 0;
@@ -553,12 +558,17 @@
     }
     .work-head-results, .work-body-results {
       margin: 0 -32px;
-      padding: 0 32px;
+      padding-left: 32px;
+      padding-right: 32px;
     }
     .work-head-results {
+      padding-top: 8px;
+      padding-bottom: 0;
       background: #1450e8;
     }
     .work-body-results {
+      padding-top: 0;
+      padding-bottom: 0;
       background: #F2F6FF;
     }
     .offer-book-box {
@@ -633,10 +643,10 @@
       .work-head-results, .work-body-results { margin: 0; padding: 20px; }
       .work-head-results { order: 1; margin-bottom: 0; }
       .work-body-results { order: 2; margin-bottom: 40px; }
-      .work-head-delivery { order: 3; margin-bottom: 12px; }
-      .work-body-delivery { order: 4; margin-bottom: 40px; }
-      .work-head-implementation { order: 5; margin-bottom: 12px; }
-      .work-body-implementation { order: 6; }
+      .work-head-delivery { order: 3; padding: 0; margin-bottom: 12px; }
+      .work-body-delivery { order: 4; padding: 0; margin-bottom: 40px; }
+      .work-head-implementation { order: 5; padding: 0; margin-bottom: 12px; }
+      .work-body-implementation { order: 6; padding: 0; }
       .offer-book-box { padding: 32px 24px; }
     }
   </style>
@@ -851,6 +861,11 @@
 
       <div class="work-columns">
 
+        <div class="work-divider-v work-divider-v-1"></div>
+        <div class="work-divider-v work-divider-v-2"></div>
+
+        <hr class="work-divider-h" />
+
         <div class="work-head-delivery">
           <div class="work-icon">
             <svg viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.73Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
@@ -871,11 +886,6 @@
           </div>
           <h3>Paid on results model</h3>
         </div>
-
-        <div class="work-divider-v work-divider-v-1"></div>
-        <div class="work-divider-v work-divider-v-2"></div>
-
-        <hr class="work-divider-h" />
 
         <div class="work-body-delivery">
           <p>We set up the entire funnel, from the automations and tech to the design and copywriting. All you have to do is:</p>
