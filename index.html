@@ -609,7 +609,12 @@
     /* ── FOOTER ─────────────────────────────────── */
     .site-footer {
       background: linear-gradient(to right, #1e5af2 0%, #1450e8 40%, #1248d8 100%);
-      padding: 18px 470px;
+      padding: 18px 0;
+    }
+    .footer-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -648,6 +653,7 @@
       .work-head-implementation { order: 5; padding: 0; margin-bottom: 12px; }
       .work-body-implementation { order: 6; padding: 0; }
       .offer-book-box { padding: 32px 24px; }
+      .footer-inner { flex-direction: column; justify-content: center; text-align: center; }
     }
   </style>
 </head>
@@ -1012,8 +1018,10 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p class="footer-copy">&copy; 2026 Liftinar. All rights reserved.</p>
-    <p class="footer-contact">Email: joel@liftinar.com &nbsp;|&nbsp; Instagram: @joelgamfeldt</p>
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Liftinar. All rights reserved.</p>
+      <p class="footer-contact">Email: joel@liftinar.com &nbsp;|&nbsp; Instagram: @joelgamfeldt</p>
+    </div>
   </footer>
 
   <script>
