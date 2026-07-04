@@ -320,7 +320,7 @@
 
     /* ── PROOF ──────────────────────────────────── */
     .proof-section {
-      background: #ffffff;
+      background: #FAFAFA;
       padding: 96px 0;
     }
     .proof-header {
@@ -449,7 +449,7 @@
 
     /* ── OFFER ──────────────────────────────────── */
     .offer-section {
-      background: #FAFAFA;
+      background: #ffffff;
       padding: 96px 0;
     }
     .offer-header {
@@ -464,95 +464,70 @@
       margin: 0 auto;
       color: #000000;
     }
-    .offer-columns {
+    .work-columns {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      grid-template-rows: auto auto auto;
-      column-gap: 48px;
-      row-gap: 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
       max-width: 1100px;
-      margin: 0 auto 56px;
+      margin: 0 auto 64px;
     }
-    .offer-cols-hr {
-      grid-column: 1 / -1;
-      grid-row: 2;
-      border: none;
-      border-top: 1px solid #E5E7EB;
-      margin: 16px 0 24px;
-    }
-    .offer-col-divider {
-      grid-column: 2;
-      grid-row: 1 / 4;
-      width: 1px;
-      background: #E5E7EB;
-    }
-    .offer-col-head {
-      font-size: 22px;
-      font-weight: 600;
-      color: #000000;
-    }
-    .offer-col-head-left { grid-column: 1; grid-row: 1; }
-    .offer-col-head-right { grid-column: 3; grid-row: 1; }
-    .offer-col-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .offer-col-list-left { grid-column: 1; grid-row: 3; }
-    .offer-col-list-right { grid-column: 3; grid-row: 3; }
-    .offer-col-list li {
-      font-size: 17px;
-      line-height: 1.55;
-      color: #1F2937;
-      padding-left: 26px;
-      position: relative;
-    }
-    .offer-col-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 8px;
-      height: 8px;
+    .work-icon {
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: #1450e8;
-    }
-    .offer-payment-box {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      background: #1450e8;
-      border: 1px solid #0f3aad;
-      border-radius: 16px;
-      padding: 28px 32px;
-      max-width: 800px;
-      margin: 0 auto 32px;
-    }
-    .offer-payment-icon {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
+      background: #EAF0FE;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 20px;
     }
-    .offer-payment-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: #ffffff;
+    .work-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: #1450e8;
       fill: none;
       stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .offer-payment-box p {
-      font-size: 18px;
-      line-height: 1.5;
-      color: #ffffff;
-      margin: 0;
+    .work-col h3 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 12px;
+    }
+    .work-col p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1F2937;
+      margin-bottom: 14px;
+    }
+    .work-col p:last-child {
+      margin-bottom: 0;
+    }
+    .work-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+    .work-col ul li {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #1F2937;
+      padding-left: 20px;
+      position: relative;
+    }
+    .work-col ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #1450e8;
     }
     .offer-book-box {
       background: #ffffff;
@@ -619,21 +594,7 @@
       .ps-col-label { display: none; }
       .steps-grid { grid-template-columns: 1fr; }
       .proof-grid { grid-template-columns: 1fr; gap: 32px; }
-      .offer-columns { grid-template-columns: 1fr; row-gap: 0; }
-      .offer-col-divider { display: none; }
-      .offer-cols-hr { display: none; }
-      .offer-col-head-left, .offer-col-head-right {
-        grid-column: 1;
-        grid-row: auto;
-        border-bottom: 1px solid #E5E7EB;
-        padding-bottom: 16px;
-        margin-bottom: 20px;
-      }
-      .offer-col-list-left, .offer-col-list-right { grid-column: 1; grid-row: auto; }
-      .offer-col-head-left { order: 1; }
-      .offer-col-list-left { order: 2; margin-bottom: 32px; }
-      .offer-col-head-right { order: 3; }
-      .offer-col-list-right { order: 4; }
+      .work-columns { grid-template-columns: 1fr; gap: 40px; }
       .offer-book-box { padding: 32px 24px; }
     }
   </style>
@@ -846,40 +807,45 @@
         <h2>Here's Exactly What It Looks Like To Work With Us</h2>
       </div>
 
-      <div class="offer-columns">
+      <div class="work-columns">
 
-        <h3 class="offer-col-head offer-col-head-left">What we do</h3>
-        <div class="offer-col-divider"></div>
-        <h3 class="offer-col-head offer-col-head-right">What you do</h3>
-
-        <hr class="offer-cols-hr" />
-
-        <ul class="offer-col-list offer-col-list-left">
-          <li><strong>Custom offer, angle, and bonus stack,</strong> engineered so the right people register and buy.</li>
-          <li><strong>Registration and confirmation pages + word-for-word VSL scripts,</strong> record in 15 minutes, done.</li>
-          <li><strong>9 promotional emails in your voice,</strong> every angle covered so your webinar stands out.</li>
-          <li><strong>Instagram story sequences and reel content plan,</strong> daily registrations with one tap per day.</li>
-          <li><strong>Comment-to-registration automation and 2-step bonus strategy,</strong> lead capture on autopilot.</li>
-          <li><strong>Reminder system across email, WhatsApp, and SMS,</strong> turns registrants into can't-miss attendees.</li>
-          <li><strong>Webinar slides, script, and full live rehearsal,</strong> present without memorizing a word.</li>
-          <li><strong>Live room moderation and qualification-gated bookings,</strong> we run the room, you get calls worth taking.</li>
-          <li><strong>24-hour replay funnel and WhatsApp follow-up sequence,</strong> captures no-shows while intent peaks.</li>
-          <li><strong>Live dashboard, lead routing, behavior-based follow-up, and 24/7 team access,</strong> real-time visibility, hottest leads first, no bottlenecks.</li>
-        </ul>
-
-        <ul class="offer-col-list offer-col-list-right">
-          <li>Promote the event with short-form content, <strong>following our provided content plan.</strong></li>
-          <li>Record 2 mini VSLs (about 2-5 min each), <strong>scripted and edited by us.</strong></li>
-          <li>Show up live and present the webinar, <strong>just reading the script we wrote.</strong></li>
-        </ul>
-
-      </div>
-
-      <div class="offer-payment-box">
-        <div class="offer-payment-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.25 3.5 9.74 8 11 4.5-1.26 8-5.75 8-11V5l-8-3z"/></svg>
+        <div class="work-col">
+          <div class="work-icon">
+            <svg viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.73Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <h3>Done-for-you delivery</h3>
+          <p>We set up the entire funnel, from the automations and tech to the design and copywriting. All you have to do is:</p>
+          <ul>
+            <li>Promote with reels, following our content plan.</li>
+            <li>Record 2 mini VSLs, scripted and edited by us.</li>
+            <li>Present the webinar, just reading the script we wrote.</li>
+          </ul>
         </div>
-        <p>We work 100% on a performance basis, meaning we only get paid when we produce a result. That's why we're as invested in your success as you are.</p>
+
+        <div class="work-col">
+          <div class="work-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Fast implementation</h3>
+          <p>We'll run your webinar in 30 days from our kick-off call.</p>
+          <ul>
+            <li><strong>Week 1:</strong> Market research and webinar foundations</li>
+            <li><strong>Week 2:</strong> Funnel set-up and promotional material</li>
+            <li><strong>Week 3:</strong> Show-up system and launch the promotion</li>
+            <li><strong>Week 4:</strong> Promote and run the live webinar</li>
+          </ul>
+        </div>
+
+        <div class="work-col">
+          <div class="work-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>Paid on results model</h3>
+          <p>We work 100% on a performance basis, meaning we only get paid when we produce a result.</p>
+          <p>That's why we're as invested in your success as you are,</p>
+          <p>And we can take on the risk, both financially and with the workload.</p>
+        </div>
+
       </div>
 
       <div class="offer-book-box">
