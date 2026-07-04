@@ -119,6 +119,8 @@
     }
     .hero .blue { color: #1450e8; }
 
+    .hero h1 .mobile-br { display: none; }
+
     .hero-sub {
       font-size: 28px;
       font-weight: 600;
@@ -624,6 +626,7 @@
     /* ── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 768px) {
       .hero-sub { font-size: 20px; }
+      .hero h1 .mobile-br { display: block; }
       .btn-cta { height: 56px; padding: 0 32px; font-size: 17px; }
       .ps-grid { grid-template-columns: 1fr; }
       .ps-arrow svg { transform: rotate(90deg); }
@@ -661,7 +664,7 @@
 
       <span class="hero-preheader">For high-ticket online coaches</span>
 
-      <h1>How We'll <span class="blue">Fill Your Calendar</span> With Pre-Sold Calls Every Month Through Done-For-You <span class="blue">Live Webinars</span></h1>
+      <h1>How We'll <span class="blue">Fill Your Calendar</span><br class="mobile-br"> With Pre-Sold Calls Every Month<br class="mobile-br"> Through Done-For-You <span class="blue">Live Webinars</span></h1>
 
       <p class="hero-sub">
         And you don't pay us a penny until it makes you money
