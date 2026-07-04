@@ -475,8 +475,10 @@
     }
     .work-head-delivery { grid-column: 1; grid-row: 1; }
     .work-head-implementation { grid-column: 5; grid-row: 1; }
+    .work-head-results { grid-column: 3; grid-row: 1; }
     .work-body-delivery { grid-column: 1; grid-row: 3; }
     .work-body-implementation { grid-column: 5; grid-row: 3; }
+    .work-body-results { grid-column: 3; grid-row: 3; }
     .work-divider-h {
       grid-column: 1 / -1;
       grid-row: 2;
@@ -510,18 +512,19 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .work-head-delivery h3, .work-head-implementation h3 {
+    .work-head-delivery h3, .work-head-implementation h3, .work-head-results h3 {
       font-size: 22px;
       font-weight: 600;
-      color: #000000;
     }
-    .work-body-delivery p, .work-body-implementation p, .work-highlight-body p {
+    .work-head-delivery h3, .work-head-implementation h3 { color: #000000; }
+    .work-head-results h3 { color: #ffffff; }
+    .work-body-delivery p, .work-body-implementation p, .work-body-results p {
       font-size: 16px;
       line-height: 1.6;
       color: #1F2937;
       margin-bottom: 14px;
     }
-    .work-body-delivery p:last-child, .work-body-implementation p:last-child, .work-highlight-body p:last-child {
+    .work-body-delivery p:last-child, .work-body-implementation p:last-child, .work-body-results p:last-child {
       margin-bottom: 0;
     }
     .work-body-delivery ul, .work-body-implementation ul {
@@ -548,33 +551,15 @@
       border-radius: 50%;
       background: #1450e8;
     }
-    .work-highlight {
-      grid-column: 3;
-      grid-row: 1 / 4;
-      display: flex;
-      flex-direction: column;
-      border-radius: 16px;
-      overflow: hidden;
+    .work-head-results, .work-body-results {
+      margin: 0 -32px;
+      padding: 0 32px;
     }
-    .work-highlight-head {
+    .work-head-results {
       background: #1450e8;
-      padding: 28px 28px 20px;
     }
-    .work-highlight-head .work-icon {
-      background: rgba(255, 255, 255, 0.15);
-    }
-    .work-highlight-head .work-icon svg {
-      stroke: #ffffff;
-    }
-    .work-highlight-head h3 {
-      font-size: 22px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    .work-highlight-body {
-      flex: 1;
+    .work-body-results {
       background: #F2F6FF;
-      padding: 24px 28px 28px;
     }
     .offer-book-box {
       background: #FAFAFA;
@@ -643,14 +628,15 @@
       .proof-grid { grid-template-columns: 1fr; gap: 32px; }
       .work-columns { grid-template-columns: 1fr; row-gap: 0; }
       .work-divider-v, .work-divider-h { display: none; }
-      .work-head-delivery, .work-head-implementation,
-      .work-body-delivery, .work-body-implementation,
-      .work-highlight { grid-column: 1; grid-row: auto; }
-      .work-highlight { order: 1; margin-bottom: 40px; }
-      .work-head-delivery { order: 2; margin-bottom: 12px; }
-      .work-body-delivery { order: 3; margin-bottom: 40px; }
-      .work-head-implementation { order: 4; margin-bottom: 12px; }
-      .work-body-implementation { order: 5; }
+      .work-head-delivery, .work-head-implementation, .work-head-results,
+      .work-body-delivery, .work-body-implementation, .work-body-results { grid-column: 1; grid-row: auto; }
+      .work-head-results, .work-body-results { margin: 0; padding: 20px; }
+      .work-head-results { order: 1; margin-bottom: 0; }
+      .work-body-results { order: 2; margin-bottom: 40px; }
+      .work-head-delivery { order: 3; margin-bottom: 12px; }
+      .work-body-delivery { order: 4; margin-bottom: 40px; }
+      .work-head-implementation { order: 5; margin-bottom: 12px; }
+      .work-body-implementation { order: 6; }
       .offer-book-box { padding: 32px 24px; }
     }
   </style>
@@ -879,6 +865,13 @@
           <h3>Fast implementation</h3>
         </div>
 
+        <div class="work-head-results">
+          <div class="work-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>Paid on results model</h3>
+        </div>
+
         <div class="work-divider-v work-divider-v-1"></div>
         <div class="work-divider-v work-divider-v-2"></div>
 
@@ -903,18 +896,10 @@
           </ul>
         </div>
 
-        <div class="work-highlight">
-          <div class="work-highlight-head">
-            <div class="work-icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            </div>
-            <h3>Paid on results model</h3>
-          </div>
-          <div class="work-highlight-body">
-            <p>We work 100% on a performance basis, meaning we only get paid when we produce a result.</p>
-            <p>That's why we're as invested in your success as you are,</p>
-            <p>And we can take on the risk, both financially and with the workload.</p>
-          </div>
+        <div class="work-body-results">
+          <p>We work 100% on a performance basis, meaning we only get paid when we produce a result.</p>
+          <p>That's why we're as invested in your success as you are,</p>
+          <p>And we can take on the risk, both financially and with the workload.</p>
         </div>
 
       </div>
