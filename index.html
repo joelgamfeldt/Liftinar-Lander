@@ -59,6 +59,7 @@
     .btn-cta {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       background: #F8D481;
       color: #000000;
@@ -66,6 +67,7 @@
       font-size: 21px;
       font-weight: 600;
       text-decoration: none;
+      white-space: nowrap;
       border: none;
       cursor: pointer;
       height: 67px;
@@ -635,7 +637,8 @@
     /* ── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 768px) {
       .hero-sub { font-size: 20px; }
-      .btn-cta { height: 56px; padding: 0 32px; font-size: 17px; }
+      .btn-cta { height: auto; padding: 14px 18px; font-size: 14px; gap: 6px; }
+      .btn-cta svg { width: 18px; height: 18px; }
       .ps-grid { grid-template-columns: 1fr; }
       .ps-arrow svg { transform: rotate(90deg); }
       .ps-col-label { display: none; }
