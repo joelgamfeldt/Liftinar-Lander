@@ -139,37 +139,67 @@
     .play-icon svg { width: 30px; height: 30px; fill: #fff; margin-left: 5px; }
     .vsl-label { font-size: 14px; color: #9CA3AF; }
 
-    /* ── SMALL VIDEO GRID (Q&A) ──────────────────── */
-    .qa-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px 48px;
-      max-width: 1280px;
+    /* ── FAQ ─────────────────────────────────────── */
+    .faq-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 900px;
       margin: 40px auto 0;
     }
-    .qa-card {
-      text-align: center;
-    }
-    .vsl-placeholder-sm {
-      background: #F7F7F7;
+    .faq-item {
+      background: #ffffff;
       border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      aspect-ratio: 16/9;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.3s ease;
     }
-    .play-icon-sm {
-      width: 44px;
-      height: 44px;
-      background: #1450e8;
+    .faq-item.open { border-color: #1450e8; }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 20px;
+      padding: 22px 28px;
+    }
+    .faq-question span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: #DAE2FB;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .play-icon-sm svg { width: 16px; height: 16px; fill: #fff; margin-left: 2px; }
+    .faq-chevron svg {
+      width: 14px;
+      height: 14px;
+      stroke: #1450e8;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .faq-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .faq-body-inner { overflow: hidden; }
+    .faq-answer {
+      font-size: 18px;
+      line-height: 1.65;
+      padding: 0 28px 22px;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-item.open .faq-body { grid-template-rows: 1fr; }
 
     /* ── CALENDAR STEP ───────────────────────────── */
     .cal-section {
@@ -299,7 +329,6 @@
       .footer-inner { flex-direction: column; justify-content: center; text-align: center; }
     }
     @media (max-width: 640px) {
-      .qa-grid { grid-template-columns: 1fr; }
       .cal-copy, .cal-copy-under { font-size: 18px; }
     }
   </style>
@@ -365,64 +394,78 @@
 
   <!-- STEP 3: Q&A -->
   <section class="step-section alt">
-    <div class="container-wide">
+    <div class="container">
 
       <div class="section-header tight">
-        <h2><span class="step-num">STEP #3:</span> Most Common Questions</h2>
+        <h2><span class="step-num">STEP #3:</span> Your Questions, Answered</h2>
       </div>
 
-      <div class="vsl-wrapper wide">
-        <div class="vsl-placeholder">
-          <div>
-            <div class="play-icon">
-              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            </div>
-            <p class="vsl-label">Video will be embedded here</p>
-          </div>
-        </div>
-      </div>
+      <div class="faq-wrapper">
 
-      <div class="qa-grid">
-        <div class="qa-card">
-          <div class="vsl-placeholder-sm">
-            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Question goes here</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">Answer copy goes here.</div></div></div>
         </div>
-        <div class="qa-card">
-          <div class="vsl-placeholder-sm">
-            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Question goes here</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">Answer copy goes here.</div></div></div>
         </div>
-        <div class="qa-card">
-          <div class="vsl-placeholder-sm">
-            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Question goes here</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">Answer copy goes here.</div></div></div>
         </div>
-        <div class="qa-card">
-          <div class="vsl-placeholder-sm">
-            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Question goes here</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">Answer copy goes here.</div></div></div>
         </div>
-        <div class="qa-card">
-          <div class="vsl-placeholder-sm">
-            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Question goes here</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">Answer copy goes here.</div></div></div>
         </div>
-        <div class="qa-card">
-          <div class="vsl-placeholder-sm">
-            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Question goes here</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">Answer copy goes here.</div></div></div>
         </div>
-        <div class="qa-card">
-          <div class="vsl-placeholder-sm">
-            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Question goes here</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">Answer copy goes here.</div></div></div>
         </div>
-        <div class="qa-card">
-          <div class="vsl-placeholder-sm">
-            <div class="play-icon-sm"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Question goes here</span>
+            <div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           </div>
+          <div class="faq-body"><div class="faq-body-inner"><div class="faq-answer">Answer copy goes here.</div></div></div>
         </div>
+
       </div>
 
     </div>
@@ -464,6 +507,16 @@
   </footer>
 
   <script src="https://fast.wistia.net/player.js" async></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
 
 </body>
 </html>
