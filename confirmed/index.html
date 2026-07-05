@@ -113,6 +113,10 @@
       margin: 16px auto 0;
     }
     .vsl-wrapper.wide { max-width: 860px; }
+    .vsl-embed {
+      border-radius: 16px;
+      overflow: hidden;
+    }
     .vsl-placeholder {
       background: #F7F7F7;
       border: 1px solid #e0e0e0;
@@ -321,12 +325,11 @@
         <h2><span class="step-num">STEP #1:</span> Watch The Short Video</h2>
       </div>
       <div class="vsl-wrapper">
-        <div class="vsl-placeholder">
-          <div>
-            <div class="play-icon">
-              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        <div class="vsl-embed">
+          <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+            <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+              <iframe src="https://fast.wistia.net/embed/iframe/rq7g1gof26?web_component=true&seo=true" title="CONFIRMATION VIDEO" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="100%"></iframe>
             </div>
-            <p class="vsl-label">Video will be embedded here</p>
           </div>
         </div>
       </div>
@@ -459,6 +462,8 @@
       <p class="footer-contact">Email: joel@liftinar.com &nbsp;|&nbsp; Instagram: @joelgamfeldt</p>
     </div>
   </footer>
+
+  <script src="https://fast.wistia.net/player.js" async></script>
 
 </body>
 </html>
